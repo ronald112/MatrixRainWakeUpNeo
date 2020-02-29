@@ -1,25 +1,21 @@
 NAME = race05
 
-INC = inc/header.h
+INC = inc/header.h \
 
-HEADBIN = header.h
+HEADBIN = header.h \
 
 SRCS = src/main.c \
-#		src/mx_printerr.c \
 
 SRCSBIN = main.c \
-#		mx_printerr.c \
 
 CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic -lncurses
-
-
 
 all: install uninstall 
 	
 install:
 	@cp $(SRCS) .
 	@cp $(INC) .
-	@clang $(CFLAGS) -o $(NAME) $(SRCSBIN)	
+	@gcc $(CFLAGS) -o $(NAME) $(SRCSBIN)	
 
 uninstall: 
 	@rm -rf $(SRCSBIN)
@@ -31,8 +27,7 @@ clean: uninstall
 reinstall:
 	@cp $(SRCS) .
 	@cp $(INC) .
-	@clang $(CFLAGS) -o $(NAME) $(SRCSBIN)
+	@gcc $(CFLAGS) -o $(NAME) $(SRCSBIN)
 
 	@rm -rf $(SRCSBIN)
 	@rm -rf $(HEADBIN)
-

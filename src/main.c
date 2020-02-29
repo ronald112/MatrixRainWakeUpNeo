@@ -22,31 +22,31 @@ static void mx_intro() {
     char *text4 = "\x1B[1;32;40mKnock, knock, Neo";
     refresh();
     for(unsigned int i = 0; i < strlen(text1); i++){
-        msleep(100);        
+        sleep(100 * 1000);        
         write(1, &text1[i], 1);
     }
-    msleep(200);
+    sleep(200 * 1000);
     clear();
     refresh();
     for(unsigned int i = 0; i < strlen(text2); i++){
-        msleep(100);        
+        sleep(100 * 1000);        
         write(1, &text2[i], 1);
     }
-    msleep(200);
+    sleep(200 * 1000);
     clear();
     refresh();
     for(unsigned int i = 0; i < strlen(text3); i++){
-        msleep(100);        
+        sleep(100 * 1000);        
         write(1, &text3[i], 1);
     }
-    msleep(200);
+    sleep(200 * 1000);
     clear();
     refresh();
     for(unsigned int i = 0; i < strlen(text4); i++){
-        msleep(100);        
+        sleep(100 * 1000);        
         write(1, &text4[i], 1);
     }
-    msleep(200);
+    sleep(200 * 1000);
     clear();
     refresh();
     endwin();
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
         }
         curpos[i]++;
         }        
-        msleep(80);
+        sleep(80 * 1000);
         refresh();
     }
     
